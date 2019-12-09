@@ -1,3 +1,5 @@
+require "pry"
+
 def game_hash
   {
     home: {
@@ -115,6 +117,30 @@ def game_hash
   }
 end
 
-def num_points_scored
-
+def get_all_players
+  return game_hash[:home][:players] + game_hash[:away][:players]
 end
+
+def find_player(player_name)
+  get_all_players.find do |player|
+    player[:player_name] == player_name
+  end
+end
+
+def num_points_scored(player_name)
+    return find_player(player_name)[:points]
+end
+
+
+def shoe_size(player_name)
+  return find_player(player_name)[:shoe]
+end
+
+
+
+
+
+
+
+
+
