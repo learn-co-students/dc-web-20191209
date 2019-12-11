@@ -67,7 +67,22 @@ class Cat
     end
 
     def self.all 
+        # custom logic whatever
         @@all 
+    end
+
+    def self.introduce_all
+        # write a class method (Cat.introduce_all) that lists all the cats and their fluffiness score
+        # in the form "Ella has a fluffiness of 10"
+
+        # 1.  Get all the cats
+        # 2.  Go through each cat
+        #     a. List their name
+        #     b. List their fluffiness 
+        Cat.all.map do |cat|
+            "#{cat.name} has a fluffiness of #{cat.fluffiness}"
+        end
+
     end
 end
 
@@ -77,13 +92,15 @@ ella = Cat.new("Ella", 18, 10)
 # puts ella.age
 
 lexi = Cat.new("Lexi", 4, 5, 3)
-
+garfield = Cat.new("Garfield", 50, 3)
 # puts lexi.introduce
  
-second_cat = Cat.all[1]
-print second_cat.age
+# second_cat = Cat.all[1]
+# print second_cat.age
 
 
 
-# write a class method (Cat.introduce_all) that lists all the cats and their fluffiness score
-# in the form "Ella has a fluffiness of 10"
+
+print Cat.introduce_all
+
+
