@@ -22,4 +22,13 @@ class Tweet
     #     @user
     # end
 
+    def username
+        # returns the username of the User who wrote this tweet
+        # tweet3.username
+        self.user.username
+
+    end
+
+
+
 end

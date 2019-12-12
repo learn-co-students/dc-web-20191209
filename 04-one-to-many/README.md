@@ -13,7 +13,7 @@
 
 * Create a User class. The class should have these methods:
   <!-- * `#initialize` which takes a username and have a reader method for the username -->
-  * `#tweets` that returns an array of Tweet instances belonging to this user
+<!--   * `#tweets` that returns an array of Tweet instances belonging to this user -->
   * `#post_tweet` that takes a message, creates a new tweet, and adds it to the user's tweet collection
 
 * Create a Tweet class. The class should have these methods:
