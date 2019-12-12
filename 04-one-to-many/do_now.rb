@@ -13,24 +13,20 @@ class Puppy
     def initialize(name)
         @name = name
         @cuteness = 5
+        # save_to_log_file(self)
+        # launch_nuclear_missles("Kim Kardashian")
+    end
+
+    def cuteness=(cuteness)
+        @cuteness = cuteness.clamp(1, 10)
     end
 
     def play_in_the_mud
-        @cuteness -= 5
-        if @cuteness > 10
-            @cuteness = 10
-        elsif @cuteness < 1
-            @cuteness = 1
-        end
+        self.cuteness -= 5
     end
 
     def take_a_bath
-        @cuteness += 3 
-        if @cuteness > 10
-            @cuteness = 10
-        elsif @cuteness < 1
-            @cuteness = 1
-        end
+        self.cuteness += 3 
     end    
 end
 
@@ -40,3 +36,4 @@ fido.take_a_bath
 puts fido.cuteness == 8 # test that take a bath raises cuteness by 3
 fido.take_a_bath
 puts fido.cuteness == 10 # test that cuteness cannot exceed 10
+puts fido.cuteness
