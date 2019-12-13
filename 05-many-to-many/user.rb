@@ -38,7 +38,18 @@ class User
     def authors
         # returns all the authors of all the tweets that this user has liked
         # without duplicates
+        # my_likes = Like.all.select do |like|
+        #     like.user == self
+        # end
+        # author_array = my_likes.map do |like|
+        #     like.tweet.username 
+        # end
+        # author_array.uniq
 
+
+        self.liked_tweets.map do |tweet|
+            tweet.username
+        end.uniq
     end
 end
 

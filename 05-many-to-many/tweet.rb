@@ -34,4 +34,18 @@ class Tweet
         @@all
     end
 
+    def likers
+        # return all User objects who have liked this Tweet
+
+        # iterate through collection of Likes 
+        Like.all.select do |like|
+        # find the ones that have a tweet that matches self
+            like.tweet == self
+            # iterate through that collection of 
+            # liked_tweets and get the users
+        end.collect {|like| like.user}
+        
+
+    end
+
 end
