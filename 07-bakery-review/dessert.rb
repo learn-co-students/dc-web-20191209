@@ -24,11 +24,31 @@ class Dessert
         #     puts dessert.name 
         # end
     end
-    
-    #ingredients
-    # should return an array of ingredients for the dessert
-    #calories
-    # should return a number totaling all the calories for all the ingredients included in that dessert
 
+    def ingredients
+    # should return an array of ingredients for the dessert
+        Ingredient.all.select do |ingredient|
+            ingredient.dessert == self 
+        end
+    end
+
+    def calories
+    # should return a number totaling all the calories for all the ingredients included in that dessert
+        # choose the ingredients for that dessert
+        # get the calories for those ingredients
+        # and add them together
+        # total_num = self.ingredients.collect do |ingredient|
+        #     ingredient.calories 
+        # end
+        # total_num.sum
+        # self.ingredients.sum do |ingredient|
+        #     ingredient.calories
+        # end
+        calorie_count = 0
+        self.ingredients.each do |ingredient|
+            calorie_count += ingredient.calories
+        end
+        return calorie_count
+    end
 end
 

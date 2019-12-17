@@ -30,7 +30,7 @@ class Ingredient
          # go through list of all ingredients 
         Ingredient.all.select do |ingredient|
              # if ingredient.name includes name passed in, return it
-            # ingredient.name.include?(ingredient_name)
+            ingredient.name.include?(ingredient_name)
         end
 
         

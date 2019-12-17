@@ -19,6 +19,9 @@ class Bakery
 
     def desserts
         # should return an array of desserts the bakery makes
+        Dessert.all.select do |dessert|
+            dessert.bakery == self 
+        end
 
     end
 

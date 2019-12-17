@@ -30,7 +30,19 @@ puts snickers.dessert == snickerdoodles
 
 puts doodles.bakery == jc
 
+puts "Ingredients match by name"
 puts Ingredient.find_all_by_name("Chocolate").include?(chocolate)
 puts Ingredient.find_all_by_name("Chocolate").include?(sprinkles)
 puts !Ingredient.find_all_by_name("Chocolate").include?(flour)
+
+puts "Bakery knows its desserts?"
+puts shannon.desserts.include?(choc_cake)
+puts !shannon.desserts.include?(snickerdoodles)
+
+puts "Dessert knows its ingredients?"
+puts snickerdoodles.ingredients.include?(doodles)
+puts !snickerdoodles.ingredients.include?(chocolate)
+
+puts "Dessert knows its calories"
+puts choc_cake.calories == 450
 # binding.pry
