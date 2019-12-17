@@ -3,15 +3,11 @@ class Bakery
     @@all = []
 
     attr_reader :name 
-    
+
     def initialize(name)
         @name = name
         @@all << self
     end
-
-    # def name
-    #     @name 
-    # end
 
     def self.all
         # should return an array of all bakeries
@@ -21,8 +17,10 @@ class Bakery
     #ingredients
     # should return an array of ingredients for the bakery's desserts
 
-    # #desserts
-    # should return an array of desserts the bakery makes
+    def desserts
+        # should return an array of desserts the bakery makes
+
+    end
 
     # #average_calories
     # should return a number totaling the average number 
