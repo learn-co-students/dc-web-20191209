@@ -1,5 +1,19 @@
 # Intro to SQL
 
+## What does SQL stand for?
+Structured Query Language
+
+## What do we use SQL for?
+Store/persist data information
+aggregate data
+manipulating data
+
+# What are some of the operations we can do in SQL?
+Create Data
+Read Data
+Update Data
+Delete data
+
 1. Install the SQLite Browser if you haven't already [here](http://sqlitebrowser.org/)
 2. Open the SQLite Browser and click 'File -> Open DataBase'
 3. Choose the `chinook.db` file from this repo. This database is open source and maintained by Microsoft (SQL is no fun if you don't have any data)
@@ -11,41 +25,50 @@
 
 ```SQL
 
-```
+SELECT * FROM artists;
 
 2. Write the SQL to select the artist with the name "Black Sabbath"
 
 ```SQL
 
+SELECT * FROM artists WHERE name= 'Black Sabbath'
+
 ```
 
 3. Write the SQL to create a table named 'fans' with an autoincrementing ID that's a primary key and a name field of type text
 
-```sql
+CREATE TABLE fans (
+  id INTEGER PRIMARY KEY,
+  name TEXT
+);
 
 ```
 
 4. Write the SQL to alter the fans table to have a artist_id column type integer?
 
-```sql
+ALTER TABLE fans
+ADD artist_id INTEGER;
 
 ```
 
 5. Write the SQL to add yourself as a fan of the Black Eyed Peas? ArtistId **169**
 
 ```sql
-
+INSERT INTO fans (name,artist_id) VALUES ("Anna",169);
 ```
 
-6. Check out the [Faker gem](https://github.com/stympy/faker). `gem install faker`, open up irb, run `require 'faker'` and then generate a fake name for yourself using `Faker::Name.name`. How would you update your name in the fans table to be your new name?
+6. Using SQL, how would you update your name in the fans table to be an alias?
 
    ```sql
-
+   UPDATE fans SET name="Skyler" WHERE name="Anna"
    ```
 
 7. Write the SQL to return fans that are not fans of the black eyed peas.
 
 ```sql
+SELECT * FROM fans WHERE artist_id IS NOT 169
+OR
+SELECT * FROM fans WHERE artist_id != NOT 169
 
 ```
 
@@ -54,6 +77,9 @@
 ```sql
 
 ```
+
+
+## BONUS
 
 9. Write the SQL to display artist name, album name and number of tracks on that album
 
@@ -66,8 +92,6 @@
 ```sql
 
 ```
-
-## BONUS (very hard)
 
 11. I want to return the names of the artists and their number of rock tracks
     who play Rock music
