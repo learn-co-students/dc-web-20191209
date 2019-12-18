@@ -29,6 +29,8 @@ SELECT * FROM artists
 
 ```
 
+```
+
 2. Write the SQL to select the artist with the name "Black Sabbath"
 
 ```SQL
@@ -75,7 +77,6 @@ UPDATE fans SET name="Skyler" WHERE name="Anna"
 SELECT * FROM fans WHERE artist_id IS NOT 169
 OR
 SELECT * FROM fans WHERE artist_id != NOT 169
-
 ```
 
 8. Write the SQL to display an artists name next to their album title
