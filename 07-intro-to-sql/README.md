@@ -39,6 +39,8 @@ SELECT * FROM artists WHERE name= 'Black Sabbath'
 
 3. Write the SQL to create a table named 'fans' with an autoincrementing ID that's a primary key and a name field of type text
 
+```SQL
+
 CREATE TABLE fans (
   id INTEGER PRIMARY KEY,
   name TEXT
@@ -47,6 +49,8 @@ CREATE TABLE fans (
 ```
 
 4. Write the SQL to alter the fans table to have a artist_id column type integer?
+
+```SQL
 
 ALTER TABLE fans
 ADD artist_id INTEGER;
