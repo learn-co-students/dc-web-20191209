@@ -25,7 +25,9 @@ Delete data
 
 ```SQL
 
-SELECT * FROM artists;
+SELECT * FROM artists
+
+```
 
 2. Write the SQL to select the artist with the name "Black Sabbath"
 
@@ -59,13 +61,13 @@ INSERT INTO fans (name,artist_id) VALUES ("Anna",169);
 
 6. Using SQL, how would you update your name in the fans table to be an alias?
 
-   ```sql
-   UPDATE fans SET name="Skyler" WHERE name="Anna"
-   ```
+```sql
+UPDATE fans SET name="Skyler" WHERE name="Anna"
+```
 
 7. Write the SQL to return fans that are not fans of the black eyed peas.
 
-```sql
+```SQL
 SELECT * FROM fans WHERE artist_id IS NOT 169
 OR
 SELECT * FROM fans WHERE artist_id != NOT 169
@@ -74,7 +76,7 @@ SELECT * FROM fans WHERE artist_id != NOT 169
 
 8. Write the SQL to display an artists name next to their album title
 
-```sql
+```SQL
 SELECT artists.name, albums.title FROM artists INNER JOIN albums ON artist_id=artists.id
 ```
 
