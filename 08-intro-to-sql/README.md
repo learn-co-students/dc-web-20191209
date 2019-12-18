@@ -27,6 +27,8 @@ Delete data
 
 SELECT * FROM artists;
 
+```
+
 2. Write the SQL to select the artist with the name "Black Sabbath"
 
 ```SQL
@@ -36,6 +38,8 @@ SELECT * FROM artists WHERE name= 'Black Sabbath'
 ```
 
 3. Write the SQL to create a table named 'fans' with an autoincrementing ID that's a primary key and a name field of type text
+
+```SQL
 
 CREATE TABLE fans (
   id INTEGER PRIMARY KEY,
@@ -69,13 +73,12 @@ INSERT INTO fans (name,artist_id) VALUES ("Anna",169);
 SELECT * FROM fans WHERE artist_id IS NOT 169
 OR
 SELECT * FROM fans WHERE artist_id != NOT 169
-
 ```
 
 8. Write the SQL to display an artists name next to their album title
 
-```sql
-
+```SQL
+SELECT artists.name, albums.title FROM artists INNER JOIN albums ON artist_id=artists.id
 ```
 
 
