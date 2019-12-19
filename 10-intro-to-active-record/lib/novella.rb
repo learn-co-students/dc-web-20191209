@@ -1,0 +1,4 @@
+class Novella < Book
+
+
+end

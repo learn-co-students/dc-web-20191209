@@ -1,5 +1,6 @@
 require 'bundler'
 Bundler.require
+require_relative '../lib/databasemodel.rb'
 require_relative '../lib/book.rb'
 require_relative '../lib/author.rb'
 

@@ -1,4 +1,4 @@
-class Author
+class Author < DatabaseModel
 
     attr_accessor :name, :id
 
@@ -43,20 +43,7 @@ class Author
         self.make_author_from_row(author_array)
     end
 
-    def self.all
-        # returns all Authors
-        sql = <<-SQL
-            SELECT * FROM authors 
-        SQL
-        author_array = DB.execute(sql) # [[1, "Maya Angelou"], [2, "Stephen King"]]
-        author_array.map do |row|
-            self.make_author_from_row(row)
-        end
-    end
 
-    def self.make_author_from_row(author_array)
-        author_name = author_array[1]
-        author_id = author_array[0]
-        Author.new(author_name, author_id)
-    end
+
+
 end

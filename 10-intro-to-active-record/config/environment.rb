@@ -1,5 +1,6 @@
 require 'bundler/setup'
 Bundler.require
+require_all 'lib'
 
 # setting up the database connection (old way)
 # DB = SQLite3::Database.new("db/library.db")
