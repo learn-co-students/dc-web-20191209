@@ -45,4 +45,11 @@ puts !snickerdoodles.ingredients.include?(chocolate)
 
 puts "Dessert knows its calories"
 puts choc_cake.calories == 450
+
+puts jc.ingredients.include?(doodles)
+puts !jc.ingredients.include?(sprinkles)
+
+puts shannon.average_calories == 250
+
+print shannon.shopping_list
 # binding.pry
