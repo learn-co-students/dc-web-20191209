@@ -5,10 +5,19 @@ task :console do
     Pry.start
 end
 
-desc "Say hello"
-task :hi do
-    puts "Hi everybody!"
+desc "say hello to everyone"
+task :say_hi do
+    puts "Hello Mod One!"
 end
 
+desc "build author table"
+task :create_authors do 
+    sql = <<-SQL
+        CREATE TABLE authors(
+            id integer PRIMARY KEY,
+            name text
+        )
+    SQL
+    DB.execute(sql)
 
-
+end
