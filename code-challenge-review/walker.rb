@@ -27,4 +27,9 @@ class Walker
             walk.dog
         end
     end
+
+    def self.starts_with(letter)
+        # returns all walkers whose name starts with a given letter)
+        
+    end
 end
