@@ -28,8 +28,15 @@ class Walker
         end
     end
 
-    def self.starts_with(letter)
+    def self.begins_with(letter)
         # returns all walkers whose name starts with a given letter)
-        
+        Walker.all.select do |walker|
+            walker.name.start_with?(letter)
+        end
+    end
+
+    def schedule_walk(dog, date)
+        # hermione.schedule_walk(cujo)
+        new_walk = Walk.new(dog, self, date)
     end
 end

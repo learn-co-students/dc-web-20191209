@@ -21,7 +21,8 @@ class Dog
     end
 
     def walkers
-        # returns array of all walkers who have walked this dog
+        # returns array of all walkers 
+        # who have walked this dog
         walks.collect do |walk|
             walk.walker
         end
