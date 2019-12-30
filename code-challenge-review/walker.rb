@@ -28,6 +28,10 @@ class Walker
         end
     end
 
+    def age
+        ((DateTime.now - self.birthday) / 365).floor
+    end
+
     def self.begins_with(letter)
         # returns all walkers whose name starts with a given letter)
         Walker.all.select do |walker|

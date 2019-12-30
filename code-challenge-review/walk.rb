@@ -1,7 +1,7 @@
 class Walk
 
-    attr_reader :dog, :walker
-    attr_accessor :date, :rating
+    attr_reader :dog, :walker, :rating
+    attr_accessor :date
 
     @@all = []
 
@@ -21,4 +21,7 @@ class Walk
         end
     end
 
+    def rating=(new_rating)
+        @rating = new_rating.to_f
+    end
 end

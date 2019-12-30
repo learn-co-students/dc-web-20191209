@@ -24,6 +24,6 @@ puts harry.name == "Harry Potter"
 puts Walker.begins_with("R")
 
 walk1.rating = 5
-walk2.rating = 3
+walk2.rating = 4
 walk3.rating = 1
 binding.pry
