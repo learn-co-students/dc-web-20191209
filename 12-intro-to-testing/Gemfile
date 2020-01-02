@@ -1,0 +1,4 @@
+bsource "https://rubygems.org"
+
+gem "pry"
+gem "rspec"
