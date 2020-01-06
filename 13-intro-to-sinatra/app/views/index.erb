@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Index Page</title>
+</head>
+<body>
+
+    <h1>All the books</h1>
+
+    <ul>
+    <% @books.each do |book| %>
+        <li><a href="/books/<%= book.slug %>/<%= book.id %>"><%= book.title %></a> 
+            <span style="color: #ff9900"> by </span> <%= book.author %>
+        </li>
+    <% end %>
+    </ul>
+
+</body>
+</html>

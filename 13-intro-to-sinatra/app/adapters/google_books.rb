@@ -1,5 +1,7 @@
 module GoogleBooks
   class Adapter
+    # populates database with seed data
+    
     BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
 
     attr_reader :author
