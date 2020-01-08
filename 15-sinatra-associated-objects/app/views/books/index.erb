@@ -10,7 +10,7 @@
     <ul>
     <% @books.each do |book| %>
         <li><a href="/books/<%= book.id %>"><%= book.title %></a> 
-            <span style="color: #ff9900"> by </span> <%= book.author %>
+            <span style="color: #ff9900"> by </span> <%= book.author.name %>
         </li>
     <% end %>
     </ul>

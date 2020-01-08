@@ -12,6 +12,14 @@
 
 * Using forms to associate objects!
 
+
+```text
+- Build index page for authors
+- Index page should link to authors' detail pages
+- Author's detail page should list books
+- Books should link to their own detail page
+```
+
 ```text
 Lecture Deliverables:
   As a site visitor, I should be able to see a list of authors
