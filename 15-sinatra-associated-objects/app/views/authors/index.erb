@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Index Page</title>
+</head>
+<body>
+
+    <h1>Author Index Page</h1>
+
+    <ul>
+        <% @authors.each do |author| %>
+            <li>
+                <a href="/authors/<%= author.id %>"><%= author.name %></a>
+            </li>
+        <% end %>
+    </ul>
+
+</body>
+</html>

@@ -28,10 +28,12 @@ class BooksController < Sinatra::Base
 
 
   post "/books" do 
-      author = Author.find_or_create_by(name: params[:author])
+      author = Author.find(params[:author_id])
       title = params[:title]
       snippet = params[:snippet]
-      @book = Book.find_or_create_by(author: author, title: title, snippet: snippet)
+      @book = Book.find_or_create_by(author: author,
+                                     title: title, 
+                                     snippet: snippet)
       redirect "/books/#{@book.id}"
   end
 

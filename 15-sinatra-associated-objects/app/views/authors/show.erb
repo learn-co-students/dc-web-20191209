@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Page</title>
+</head>
+<body>
+
+
+    <h1>Detail Page</h1>
+
+    <h2><%= @author.name %></h2>
+
+    <div>
+        <h3>Books by this Author</h3>
+            <ul>
+                <% @author.books.each do |book| %>
+                    <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+                <% end %>
+            </ul>
+    </div>
+</body>
+</html>
