@@ -16,8 +16,8 @@
     <!-- - resources routes vs manual construction -->
         - `can't modify frozen array?`
     <!-- - `create!`? -->
-    - `before_action`?<!-- 
-    - `link_to` and other --> helpers
+    <!-- - `before_action`? -->
+    <!-- - `link_to` and other helpers -->
 
 
 - What do we need for our first page, an index page?
