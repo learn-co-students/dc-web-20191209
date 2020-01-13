@@ -33,3 +33,14 @@ For each deliverable discuss
 
 1. Does the Schema need to Change?
 2. What are the necessary route\(s\)?
+
+
+
+Questions
+- inputs on form fields (name, for, value, etc)
+- GET params
+- method_override (for patch, put, etc)
+- order of controller actions
+- conditional rendering
+- nested forms
+- 
