@@ -1,111 +1,113 @@
-** Remind there is a code challenge **
+lecture_notes.md
 
-- Build Retailer model
-    - Retailer has many snacks
-    - Snacks belongs_to retailer
-
-- `rails g model Retailer name year_established:integer`
-
-- add migration for snack retailer_id:integer
-    - `rails g migration AddRetailerToSnacks retailer_id:integer`
-
-- seeds.rb
-
-```retailers = Retailer.create([{name: "Hostess", year_established: 1929},
-                                {name: "Girl Scouts", year_established: 1944}])
-
-snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6, retailer_id: 1},
-                       {name: "Chicken fingers", calories: 650, deliciousness: 8, retailer_id: 2}])
-```
-
-- `rake db:reset` (drop, migrate, seed) 
-    - Caveat:  nukes db, don't use in production
-
-- `rails g controller Retailers index`
-
-- add belongs_to and has_many to models
-```belongs_to :retailer```
-```has_many :snacks```
-
-- "How should we include retailers on our snack page?" (Elicit dropdown)
-
-```<%= f.collection_select(:retailer_id, Retailer.all, :id, :name, prompt: true) %>```
-
-- Will not create until added to required_params - add in retailer_id
-
-retailer.rb
-
-```
-class Retailer < ApplicationRecord
-    has_many :snacks
-    accepts_nested_attributes_for :snacks
-end
-```
-
+- `rails new snack-tracker`
+- `cd snack-tracker`
+- `rails g model Snack name calories:integer deliciousness:integer`
+    - Look at what it's built
+        -model
+        -migration
+        -test file
+        -fixtures 
+-`rails db:migrate`
+    - show schema
+        - null: false
+        - point out `created_at`, `updated_at`
+- build some seed data
+- Review RESTful routes (index, show, edit, create, new, update, destroy)
+- in config/routes.rb:
+    -`  resources :snacks, only: [:index]`
+- Build a controller
+- `rails g controller Snacks index`
+    - Build this in the wrong directory and show the `rails destroy controller Snacks` command
+- app/controller/snacks_controller.rb
 
 ```rb
-class Retailer < ApplicationController
+class SnacksController < ApplicationController
 
-  def index
-    @retailers = Retailer.all
-  end
+        def index
+            @snacks = Snack.all
+            
+        end
 
-  def new
-    @retailer = Retailer.new
-    @retailer.snacks.build
-    # later change to 3.times { @retailer.snacks.build }
-  end
-
-  def create
-    @retailer = Retailer.create(retailer_params)
-    redirect_to snacks_path
-  end
-
-  private
-
-  def retailer_params
-    params.require(:retailer).permit(:name, :year_established,
-        snacks_attributes: [:name, :calories, :deliciousness])
-  end
 end
 ```
 
-retailers new.html.erb
- - Allow multiple snacks here but form will process the empty ones
+- Build the view in the snacks folder
+    - Point out extension `.html.erb`
+- Go to localhost:3000/index, which is wrong.  Show `rails routes`
+    - localhost:3000/snacks
+
+- add show route, controller, view.  Will work without restarting.  App folder can change without restart; routes need restart (but I guess not if just changing the only?)
+    - show traditional way of building links, then show `rails routes` again as well as go into `rails c` and show the `app.snacks_path` and other routes
+    - `<%= link_to snack.name, snack_path(snack) %>`
+    - add some css somewhere on the page to introduce
+        - external stylesheets
+        - classes and ids
+        - basic css syntax
+
+- add `:new :create`
+    - `@snack = Snack.new`
+    - new.html.erb
+    - **`form_for` vs `form_tag`**
+        -`form_for` represents an ActiveRecord model
+        -`form_tag` doesn't, and should be used for custom forms
+        - both include csrf validation.  Before defining fields, show the form (with all hidden fields) in the inspector
+        - `form_for`s is a bit easier to use for creating forms for a model object because it figures out what url to use and what http method to use depending on whether the object is a new record or a saved record.
+        - Rails 5 will replace both of these with `form_with`
+        
 ```html
-
-    <h1>New Retailer</h1>
-
-    <%= form_for @retailer do |r| %>
-        <%= r.label :name %>
-        <%= r.text_field :name %>
-        <%= r.label :year_established %>
-        <%= r.number_field :year_established %>
-
-        <h2>Snacks</h2>
-            <%= r.fields_for :snacks do |snack| %>
-                <%= snack.label :name %>
-                <%= snack.text_field :name %>
-                <%= snack.label :calories %>
-                <%= snack.number_field :calories %>
-                <%= snack.label :deliciousness %>
-                <%= snack.select :deliciousness, (1..10) %>
-            <% end %>
-    <% end %>
+<h1>New Snack:</h1>
+<%= form_for @snack do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :calories %>
+    <%= f.number_field :calories %>
+    <%= f.label :deliciousness %>
+    <%= f.select :deliciousness, (1..10) %>
+    <%= f.submit "Snackify" %>
+<% end %>
 ```
 
-to fix blank snacks:
- ```rb
-  # retailer.rb
- accepts_nested_attributes_for :snacks,
-   :reject_if     => :all_blank
- ```
+- put byebug in Create
+- Show params
+- Show `Snack.create(params)` and `Snack.create(params[:snack])` give same error.
+    - Security risk
+        - Mass assignment, can put in bad code
+```rb
+    def create
+        @snack = Snack.create(params.require(:snack).permit(:name, :deliciousness, :calories))
+        redirect_to @snack
+    end
+```
 
-Nested URLs:
+- add :update and :edit to routes
+- edit.html.erb matches new.html.erb
+    - move form into `_snack_form.html.erb`
+    - `<%= render "snack_form" %>`
+- add link from detail page to edit page
+    - `<%= link_to "Edit", edit_snack_url(@snack) %>`
+- add link on index page to show page
+    - `<%= link_to snack.name, snack_url(snack) %>`
+- SnackController#update matches create.  Move `allowed_params` into private method
+- Destroy method
+    - can remove `only:` now since we're doing them all
+- add form_tag (custom form so not form_for) to edit page
 
 ```rb
-    resources :snacks
-    resources :retailers do
-      resources :snacks, {only: [:index, :show]}
+    <%= link_to 'Destroy this snack', snack_path(@snack),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %>
+```
+
+```rb
+    def destroy
+        Snack.destroy(params[:id])
+        redirect_to snacks_path
+    end
+```
+
+- `before_action :find_snack, only: [:edit, :update, :show]`
+```rb
+def find_snack
+        @snack = snack.find(params[:id])
     end
 ```

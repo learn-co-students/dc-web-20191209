@@ -1,10 +1,9 @@
-<h1>Snacks Index Page</h1>
+<h1>Index Page for All Snacks</h1>
 
-<ul id="snack-list">
-<% @snacks.each do |snack| %>
-    <li class="blue"><%= link_to snack.name, snack_path(snack) %></li>
-<% end %>
-
+<ul>
+    <% @snacks.each do |snack| %>
+        <li><%= link_to snack.name, snack_path(snack) %></li>
+    <% end %>
 </ul>
 
-<%= link_to "New Snack", new_snack_path %>
+<%= link_to "Create a new snack", new_snack_path %>

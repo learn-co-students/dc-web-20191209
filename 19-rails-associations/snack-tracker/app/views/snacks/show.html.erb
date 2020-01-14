@@ -1,12 +1,9 @@
-<h1><%= @snack.name %></h1>
+<h1>Detail Page for <%= @snack.name %></h1>
 
-<h3>Calories: <%= @snack.calories %></h3>
-<h3>Deliciousness: <%= @snack.deliciousness %></h3>
-<h3>Made by: <%= link_to @snack.retailer.name, retailer_path(@snack.retailer) %></h3>
-<%= link_to "Edit Snack", edit_snack_path %>
-<%= link_to "Index Page", snacks_path %>
+<div>Calories: <%= @snack.calories %></div>
+<div>Deliciousness: <%= @snack.deliciousness %></div>
 
-<%= form_tag @snack, method: "DELETE" do %>
-    <%= submit_tag "Delete" %>
-<% end %>
-
+<!-- <a href=<%= snacks_path %>>Back to Index Page</a> -->
+<div><%= link_to "Edit this snack", edit_snack_path(@snack) %></div>
+<div><%= link_to "Destroy this snack", snack_path(@snack), :method => :delete %></div>
+<div><%= link_to "Back to Index Page", snacks_path %></div>
