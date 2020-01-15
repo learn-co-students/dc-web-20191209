@@ -1,0 +1,11 @@
+<h1>Detail Page for <%= @snack.name %></h1>
+
+<div>Calories: <%= @snack.calories %></div>
+<div>Deliciousness: <%= @snack.deliciousness %></div>
+<div>Retailer: 
+    <%= link_to @snack.retailer.name, retailer_path(@snack.retailer) %>
+</div>
+
+<div><%= link_to "Edit this snack", edit_snack_path(@snack) %></div>
+<div><%= link_to "Destroy this snack", snack_path(@snack), :method => :delete %></div>
+<div><%= link_to "Back to Index Page", snacks_path %></div>
