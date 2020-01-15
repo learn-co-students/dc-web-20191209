@@ -3,7 +3,11 @@
 <div>Calories: <%= @snack.calories %></div>
 <div>Deliciousness: <%= @snack.deliciousness %></div>
 <div>Retailer: 
-    <%= link_to @snack.retailer.name, retailer_path(@snack.retailer) %>
+    <% if @snack.retailer.nil? %>
+        <div>We don't know who made this</div>
+    <% else %>
+        <%= link_to @snack.retailer.name, retailer_path(@snack.retailer) %>
+    <% end %>
 </div>
 
 <div><%= link_to "Edit this snack", edit_snack_path(@snack) %></div>

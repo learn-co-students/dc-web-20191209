@@ -16,8 +16,14 @@ class SnacksController < ApplicationController
   end 
 
   def create
-    snack = Snack.create(snack_params)
-    redirect_to snack_path(snack.id)
+    @snack = Snack.new(snack_params)
+    if @snack.valid?
+      @snack.save
+      redirect_to snack_path(@snack.id)
+    else
+      # go back to new, displaying error messages
+      render :new
+    end
   end
 
   def edit
@@ -26,7 +32,11 @@ class SnacksController < ApplicationController
 
   def update
     @snack.update(snack_params)
-    redirect_to @snack 
+    if @snack.valid?  
+      redirect_to @snack 
+    else 
+      render :edit 
+    end
 
   end 
 

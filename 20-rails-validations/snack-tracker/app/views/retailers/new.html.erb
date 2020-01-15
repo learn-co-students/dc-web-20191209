@@ -1,5 +1,8 @@
 <h1>Create a new Retailer</h1>
 
+<% if @retailer.errors %>
+    <%= render partial: "shared/error_list", locals: {new_object: @retailer} %>
+<% end %>
 
 <%= form_for @retailer do |ret| %>
     <%= ret.label :name %>
