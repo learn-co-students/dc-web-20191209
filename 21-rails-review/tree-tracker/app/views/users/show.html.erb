@@ -1,0 +1,9 @@
+<h1><%= @user.name %></h1>
+
+<p>Username: <%= @user.username %></p>
+
+<ul>
+<% @user.trees.each do |tree| %>
+    <li><%= link_to tree.common_name, tree_path(tree) %></li>
+<% end %>
+</ul>

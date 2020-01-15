@@ -1,0 +1,7 @@
+<h1>All Trees</h1>
+
+<% @all_trees.each do |tree| %>
+    <p> <%= link_to tree.common_name, tree %></p>
+<% end %>
+
+<%= link_to "Add a new tree", new_tree_path %>

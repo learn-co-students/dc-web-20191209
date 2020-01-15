@@ -1,0 +1,16 @@
+<% @tree.errors.full_messages.each do |message| %>
+    <%= message %>
+<% end %>
+
+<%= form_for @tree do |f| %>
+    <%= f.label :common_name %>
+    <%= f.text_field :common_name %>
+    <%= f.label :binomial_name %>
+    <%= f.text_field :binomial_name %>
+    <%= f.label :category %>
+    <%= f.select :category, ["deciduous", "coniferous"], prompt: true %>
+    <label>Favorite tree of:</label>
+    <%= f.collection_select :user_ids, User.all, :id, :name, prompt: true %>
+    <%= f.submit %>
+
+<% end %>
