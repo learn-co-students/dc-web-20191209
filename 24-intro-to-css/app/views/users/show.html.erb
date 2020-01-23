@@ -1,0 +1,13 @@
+<div class="heading secondary-heading"> <%= @user.name %> </div>
+
+<div class="wrapper">
+    <img class="show-image" src=<%= @user.image %>>
+    <p>Username: <%= @user.username %></p>
+    <p>Favorite trees:</p>
+    <ul>
+        <% @user.trees.each do |tree| %>
+            <li><%= link_to tree.common_name, tree %></li>
+        <% end %>
+    </ul>
+    <%= link_to "Update Profile", edit_user_path %>
+</div>

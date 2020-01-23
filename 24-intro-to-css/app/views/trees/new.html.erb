@@ -1,0 +1,32 @@
+<div class="heading secondary-heading">Favorite tree not in our database? Add a new tree!</div>
+
+<div class="my-form">
+    <%= form_for @tree, :html => {:class => "ui form error"} do |f| %>
+        <h4 class="ui dividing header">Tree Information</h4>
+        <div class="two fields">
+            <div class="field">
+                <%= f.text_field :common_name, placeholder: "Common name" %>
+                <p class="ui error message"><%= @tree.errors.messages[:common_name][0]%></p>
+            </div>
+            <div class="field">
+                <%= f.text_field :binomial_name, placeholder: "Scientific name" %>
+                <p class="ui error message"><%= @tree.errors.messages[:binomial_name][0]%></p>
+            </div>
+        </div>
+        <div class="field">
+            <label>Type:</label>
+            <%= f.select :category, %w(deciduous coniferous), prompt: true %>
+            <p class="ui error message"><%= @tree.errors.messages[:category][0]%></p>
+        </div>
+        <div class="field">
+            <label>Photo (url)</label>
+            <%= f.text_field :image %>
+        </div>
+        <h4 class="ui dividing header">Your Information</h4>
+        <div class="field">
+            <label>Favorite tree of:</label>
+            <%= f.collection_select :user_ids, User.all, :id, :name %>
+        </div>
+        <%= f.submit "Create Tree", class: "ui yellow button" %>
+    <% end %>
+</div>

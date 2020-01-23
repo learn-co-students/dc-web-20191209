@@ -1,0 +1,62 @@
+body {
+    font-family: sans-serif;
+}
+
+.heading {
+    color: white;
+    background-image: url(leaf-background.png);
+    background-size: cover;
+}
+
+.primary-heading {
+    font-size: 75px;
+    text-align: center;
+    padding: 50px;
+}
+
+.secondary-heading {
+    font-size: 25px;
+    padding: 25px;
+}
+
+
+
+.wrapper {
+    margin: 50px 200px;
+    padding: 20px;
+}
+
+.intro {
+    background-color: linen;
+    border: 3px solid black;
+}
+
+.gallery {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.gallery-image {
+    width: 200px;
+    height: 200px;
+}
+
+
+.show-image {
+    max-height: 300px;
+    float: left;
+    margin: 0px 50px 0px 0px;
+}
+
+.my-form {
+    margin: 50px 25vw;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+#navbar {
+    margin-bottom: 0px;
+}
