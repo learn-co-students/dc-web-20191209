@@ -1,0 +1,33 @@
+<div class="heading secondary-heading">Edit profile for <%= @user.name %></div>
+
+<div class="my-form">
+    <%= form_for @user, :html => {:class => "ui form error"} do |f| %>
+        <h4 class="ui dividing header">Basic Information</h4>
+        <div class="two fields">
+            <div class="field">
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+                <p class="ui error message"><%= @user.errors.messages[:name][0]%></p>
+            </div>
+            <div class="field">
+                <%= f.label :username %>
+                <%= f.text_field :username %><br>
+                <p class="ui error message"><%= @user.errors.messages[:username][0]%></p>
+            </div>
+        </div>
+        <div class="field">
+            <label>Profile photo (url)</label>
+            <%= f.text_field :image %>
+        </div>
+        <h4 class="ui dividing header">Favorite trees:</h4>
+        <div class="ui checkbox">
+            <%= f.collection_check_boxes(:tree_ids, Tree.all, :id, :common_name) do |box| %>
+                <div class="ui checkbox">
+                    <%=box.check_box%>
+                    <label><%= box.text %></label>
+                </div><br>
+            <% end %>
+        </div><br><br>
+        <%= f.submit "Update", class: "ui yellow button" %>
+    <% end %>
+</div>
