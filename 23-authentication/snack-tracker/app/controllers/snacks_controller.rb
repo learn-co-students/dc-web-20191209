@@ -1,7 +1,8 @@
 class SnacksController < ApplicationController
 
   before_action :find_snack, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorized
+  
   def index
     puts "I am an index page"
     @snacks = Snack.all

@@ -10,14 +10,14 @@
   </head>
 
   <body>
-    <% unless 1 == 1 && 1 == 2 %>
+    <% unless controller_name == "sessions" %>
       <% if current_user %>
         <div class="header">
           <div>Welcome, <%= current_user.username.titlecase %> </div>
           <div><%= link_to "Logout", logout_path %></div>
         </div>
       <% else %>
-        <div>Please log in</div>
+        <div><%= link_to "Please log in", login_path %></div>
       <% end %>
     <% end %>
     <%= yield %>

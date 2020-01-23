@@ -1,0 +1,13 @@
+<h1>Create a new user or <%= link_to "Log In", login_path %></h1>
+
+<% if @user.errors %>
+    <%= render partial: "shared/error_list", locals: {new_object: @user} %>
+<% end %>
+
+<%= form_for @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "Create User" %>
+<% end %>
