@@ -1,9 +1,20 @@
-console.log('connected')
+document.addEventListener("DOMContentLoaded", () => {
+    let emailNodes = document.querySelectorAll(".email")
+    emailNodes.forEach(emailNode => {
+        emailNode.addEventListener("click", handleEmailClick)
+    })
+})
 
 
-// function getTable(){
-//     return document.getElementsByTagName('tbody')[0]
-// }
+function handleEmailClick(event) {
+    let emailAddress = event.target.innerText
+    console.log(`sending email to ${emailAddress}`)
+}
+
+
+// Goal 
+// - When a user clicks a person's first name,
+     // alert that first name on the screen
 
 // function addInstructor(firstName, lastName, email) {
 //     let table = getTable()
