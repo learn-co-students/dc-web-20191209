@@ -1,44 +1,34 @@
 {
   "pokemon": [
     {
-      "id": 1,
-      "name": "bulbasaur",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-    },
-    {
-      "id": 2,
-      "name": "ivysaur",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
-    },
-    {
-      "id": 4,
-      "name": "charmander",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
-    },
-    {
       "id": 5,
       "name": "charmeleon",
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
     },
     {
-      "id": 6,
-      "name": "charizard",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
-    },
-    {
-      "id": 7,
-      "name": "squirtle",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
-    },
-    {
-      "id": 8,
-      "name": "wartortle",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
-    },
-    {
       "id": 9,
       "name": "blastoise",
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
+    },
+    {
+      "name": "Shannon",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
+      "id": 10
+    },
+    {
+      "name": "Michael Crichton",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png",
+      "id": 12
+    },
+    {
+      "name": "Jane Austin",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/520.png",
+      "id": 13
+    },
+    {
+      "name": "Jane Austin",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/204.png",
+      "id": 14
     }
   ]
 }
