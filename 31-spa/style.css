@@ -1,0 +1,35 @@
+body {
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-weight: 300;
+}
+
+#container {
+  width:1000px;
+  margin:auto;
+  margin-top:50px;
+}
+
+#pokemon-logo {
+  width:300px;
+  margin-left:330px;
+}
+
+input:focus {
+  outline: none;
+}
+
+form {
+  text-align: center;
+}
+
+.card {
+  margin:auto;
+  float:left;
+  text-align: center;
+  width:190px;
+  border: solid 1px;
+}
+
+.center-text {
+  text-align: center;
+}
