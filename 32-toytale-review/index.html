@@ -14,11 +14,12 @@
       />
     </div>
 
-    <div class="container">
+    <div class="container" data-form-toggle="">
       <form class="add-toy-form">
         <h3>Create a toy!</h3>
 
         <input
+          id="toy-name"
           type="text"
           name="name"
           value=""
@@ -27,6 +28,7 @@
         />
         <br />
         <input
+          id="toy-image-url"
           type="text"
           name="image"
           value=""
@@ -45,6 +47,11 @@
     <p style="text-align:center">
       Andy needs your help! <button id="new-toy-btn">Add a new toy!</button>
     </p>
+    <form id="search-form">
+      <label>Search Toy</label>
+      <input name="search" type="text">
+      <input type=submit value="Search">
+    </form>
 
     <div id="toy-collection"></div>
   </body>
