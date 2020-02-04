@@ -1,7 +1,9 @@
 class CatsController < ApplicationController
   def index
-    cats = Cat.all
-    render json: cats
+    all_cats = Cat.all
+    render json: all_cats.to_json(
+      :include => {:hobbies => 
+        {:except => [:created_at, :updated_at]}})
   end
 
   def create

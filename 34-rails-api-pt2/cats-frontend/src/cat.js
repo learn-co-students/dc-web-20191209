@@ -1,10 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    fetchCats()
-    getForm().addEventListener('submit', processForm)
-})
-
-
-
 function fetchCats() {
     // fetches cat data from API
     fetch("http://localhost:3000/cats")
@@ -14,11 +7,10 @@ function fetchCats() {
 
 
 function buildCatCard(cat) {
-
     let catContainer = document.getElementById("cats")
 
     let cardDiv = document.createElement('div')
-    cardDiv.className = "card"
+    cardDiv.classList += "card"
 
     let catImg = document.createElement('img')
     catImg.src = cat.image
@@ -26,12 +18,18 @@ function buildCatCard(cat) {
     let nameDiv = document.createElement('div')
     nameDiv.innerText = cat.name 
 
-    cardDiv.append(catImg, nameDiv)
+    let hobbyUl = document.createElement('ul')
+    cat.hobbies.forEach(hobby => {
+        let hobbyLi = document.createElement('li')
+        hobbyLi.innerText = hobby.name 
+        hobbyUl.appendChild(hobbyLi)
+    })
+    cardDiv.append(catImg, nameDiv, hobbyUl)
 
     catContainer.appendChild(cardDiv)
 }
 
-function getForm() {
+function getCatForm() {
     return document.getElementsByTagName('form')[0]
 }
 
