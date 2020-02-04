@@ -18,5 +18,14 @@ body {
 }
 
 .card {
-  margin: auto!important;
+  margin: auto;
+  width: 300px;
+}
+
+.card div {
+  font-size: 16px;
+}
+
+.card img {
+  width: 200px;
 }
