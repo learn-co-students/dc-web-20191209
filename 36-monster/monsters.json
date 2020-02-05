@@ -2,7 +2,7 @@
   "monsters": [
     {
       "name": "Chronos",
-      "age": 4005.302453418598,
+      "age": "4005.302453418598",
       "description": "Effulgence eldritch shunned foetid. Ululate gibbering tenebrous foetid iridescence daemoniac. Stench nameless gambrel. Amorphous furtive iridescence noisome. Foetid mortal nameless.",
       "id": 1
     },
@@ -6017,6 +6017,42 @@
       "age": 99,
       "description": "Writes some books",
       "id": 1003
+    },
+    {
+      "name": "John-Louis",
+      "age": "27",
+      "description": "Flies and oversees the dark dimension",
+      "id": 1004
+    },
+    {
+      "name": "Skyler",
+      "age": 27,
+      "description": "Throws children into lakes",
+      "id": 1005
+    },
+    {
+      "name": "Marija",
+      "age": 27,
+      "description": "Knows all programming languages but has no memory of them unless wearing secret amulet",
+      "id": 1006
+    },
+    {
+      "name": "Amia",
+      "age": 11,
+      "description": "Encyclopedic knowledge of anime",
+      "id": 1007
+    },
+    {
+      "name": "Sean",
+      "age": 27,
+      "description": "Banshee screams",
+      "id": 1008
+    },
+    {
+      "name": "Mansour",
+      "age": 27,
+      "description": "Can eat three slices of pizza in a single sitting",
+      "id": 1009
     }
   ]
 }
