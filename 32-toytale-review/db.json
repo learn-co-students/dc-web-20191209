@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 25
+      "likes": 36
     },
     {
       "id": 2,
@@ -51,7 +51,7 @@
     {
       "name": "The OG Baby Yoda",
       "image": "https://www.piratesandprincesses.net/wp-content/uploads/2019/12/baby-yoda-the-child-plush-mattel.jpg",
-      "likes": 10,
+      "likes": 43,
       "id": 9
     }
   ]
