@@ -1,3 +1,5 @@
+require 'pry'
+
 class Person
 
     def initialize(first_name, last_name)
@@ -9,6 +11,7 @@ class Person
     end
 
     def greet
+        binding.pry
         puts "#{self.first_name} says hi"
     end
 
