@@ -1,0 +1,39 @@
+.main-wrapper {
+  margin: 0% 5% 0% 5%;
+}
+
+#navWrapper {
+  margin-bottom: 2%;
+  background-color: #ffe0e0;
+  height: 150px;
+}
+
+.filterWrapper {
+  margin: 2% 0% 2% 0%;
+}
+
+#sortLabel {
+  margin-left: 50px;
+}
+
+#back-image {
+  height: 157px;
+  width: 157px;
+  margin: 0px 0px 20px 50px;
+  border-radius: 5px;
+}
+
+.headerText {
+  color: #F5A9BC;
+  font-size: 3em;
+  margin: 0% 2% 0% 2%;
+}
+
+.normalText {
+  font-family: Georgia, serif;
+  font-size: .75em;
+}
+
+.App-logo {
+  height: 80px;
+}
